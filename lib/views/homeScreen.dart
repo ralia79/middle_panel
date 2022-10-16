@@ -31,11 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
     ["چراغ خواب", false, Icons.light_outlined],
     ["کامپیوتر", false, Icons.computer],
     ["رینگ لایت", false, Icons.lightbulb_outline_sharp],
+    ["برق اصلی", false, Icons.bolt_outlined],
+    ["چراغ خواب", false, Icons.light_outlined],
   ];
 
   List<List> scenarioList = [
     ["خواب", false, Icons.bed_outlined],
     ["بیداری", false, Icons.light_mode_outlined],
+    ["خواب", false, Icons.bed_outlined],
   ];
   var radiator = "assets/images/radiator_active.png";
   var cooler = "assets/images/cooler_deactive.png";
@@ -119,240 +122,256 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         child: Container(
-          width: widthScreen,
           height: heightScreen,
           color: Colors.black,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LandigScreen()),
-                      );
-                    },
-                    child: Container(
-                      width: 60.0,
-                      height: 60.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Color(0xFF303030),
-                      ),
-                      child: Icon(
-                        Icons.list_rounded,
-                        size: 45.0,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OpenDoorScreen()),
-                      );
-                    },
-                    child: Container(
-                      width: 60.0,
-                      height: 60.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Color(0xFF303030),
-                      ),
-                      child: Icon(
-                        Icons.doorbell_outlined,
-                        size: 45.0,
-                        color: Colors.white,
+              Container(
+                height: heightScreen,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LandigScreen()),
+                        );
+                      },
+                      child: Container(
+                        width: 60.0,
+                        height: 60.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Color(0xFF303030),
+                        ),
+                        child: Icon(
+                          Icons.list_rounded,
+                          size: 45.0,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OpenDoorScreen()),
+                        );
+                      },
+                      child: Container(
+                        width: 60.0,
+                        height: 60.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Color(0xFF303030),
+                        ),
+                        child: Icon(
+                          Icons.doorbell_outlined,
+                          size: 45.0,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               InkWell(
                 onTap: () {
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => TempScreen()));
                 },
-                child: Stack(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 20.0, right: 20.0),
-                      width: 170.0,
-                      height: 300.0,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF303030),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(7.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              height: 150.0,
-                              child: Stack(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.topCenter,
-                                    child: SleekCircularSlider(
-                                      innerWidget: (percentage) => Center(
-                                          child: Text(
-                                        isOff
-                                            ? "خاموش"
-                                            : percentage.toInt().toString() +
-                                                "°C",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontFamily: "Byekan",
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      )),
-                                      appearance: CircularSliderAppearance(
-                                          size: 120.0,
-                                          customWidths: CustomSliderWidths(
-                                            progressBarWidth: 5,
-                                            handlerSize: 9,
-                                            trackWidth: 5,
-                                            shadowWidth: 2,
-                                          ),
-                                          customColors: CustomSliderColors(
-                                            progressBarColor: Color(0xFFFF8C00),
-                                            shadowColor: Color(0xFF0000),
-                                            dotColor: Color(0xFFFF8C00),
-                                            trackColor: Color(0xFF5A5A5A),
-                                          )),
-                                      min: 20,
-                                      max: 40,
-                                      initialValue: 20,
-                                      onChange: (value) => {
-                                        if (value == 20)
-                                          isOff = true
-                                        else
-                                          isOff = false
-                                      },
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Container(
-                                      width: 160.0,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          InkWell(
-                                            child: Container(
-                                              width: 30,
-                                              height: 30,
-                                              child: Image.asset(radiator),
-                                            ),
-                                            onTap: () => {
-                                              setState(() {
-                                                radiator =
-                                                    "assets/images/radiator_active.png";
-                                                cooler =
-                                                    "assets/images/cooler_deactive.png";
-                                              })
-                                            },
-                                          ),
-                                          InkWell(
-                                            child: Container(
-                                              margin: EdgeInsets.only(
-                                                  top: 4, left: 10.0),
-                                              width: 30,
-                                              height: 30,
-                                              child: Image.asset(cooler),
-                                            ),
-                                            onTap: () => {
-                                              Fluttertoast.showToast(
-                                                  msg:
-                                                      "این قابلیت در این نسخه در دسترس نمیباشد")
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 150.0,
-                                  height: 1.0,
-                                  color: Color(0xFF707070),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Container(
+                  height: heightScreen,
+                  alignment: Alignment.center,
+                  child: Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, right: 20.0),
+                        width: widthScreen * 0.28,
+                        height: heightScreen * 0.75,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF303030),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(7.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Container(
+                                height: heightScreen * 0.4,
+                                child: Stack(
                                   children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          "٪  رطوبت  ",
+                                    Align(
+                                      alignment: Alignment.topCenter,
+                                      child: SleekCircularSlider(
+                                        innerWidget: (percentage) => Center(
+                                            child: Text(
+                                          isOff
+                                              ? "خاموش"
+                                              : percentage.toInt().toString() +
+                                                  "°C",
+                                          textAlign: TextAlign.center,
                                           style: TextStyle(
-                                              fontSize: 16.0,
-                                              fontFamily: "Byekan",
-                                              color: Color(0xFFA5A5A5)),
-                                        ),
-                                        Text(
-                                          "14",
-                                          style: TextStyle(
-                                              fontSize: 18.0,
-                                              fontFamily: "Byekan",
-                                              color: Colors.white),
-                                        )
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 10.0, right: 10.0),
-                                      child: Container(
-                                        width: 1,
-                                        height: 50,
-                                        color: Color(0xFF6B6B6B),
+                                            color: Colors.white,
+                                            fontSize: 30.0,
+                                            fontFamily: "Byekan",
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        )),
+                                        appearance: CircularSliderAppearance(
+                                            size: 350.0,
+                                            customWidths: CustomSliderWidths(
+                                              progressBarWidth: 10,
+                                              handlerSize: 0,
+                                              trackWidth: 10,
+                                              shadowWidth: 2,
+                                            ),
+                                            customColors: CustomSliderColors(
+                                              progressBarColor: Color(0xFF5A5A5A),
+                                              shadowColor: Color(0xFF0000),
+                                              dotColor: Color(0xFFFF8C00),
+                                              trackColor: Color(0xFF5A5A5A),
+                                            )),
+                                        min: 20,
+                                        max: 40,
+                                        initialValue: 20,
+                                        onChange: (value) => {
+                                          if (value == 20)
+                                            isOff = true
+                                          else
+                                            isOff = false
+                                        },
                                       ),
                                     ),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          "°C  دما  ",
-                                          style: TextStyle(
-                                              fontFamily: "Byekan",
-                                              fontSize: 16.0,
-                                              color: Color(0xFFA5A5A5)),
+                                    Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: Container(
+                                        width: 160.0,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                            InkWell(
+                                              child: Container(
+                                                width: 40,
+                                                height: 40,
+                                                child: Image.asset(radiator),
+                                              ),
+                                              onTap: () => {
+                                                setState(() {
+                                                  radiator =
+                                                      "assets/images/radiator_active.png";
+                                                  cooler =
+                                                      "assets/images/cooler_deactive.png";
+                                                })
+                                              },
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                margin: EdgeInsets.only(
+                                                    top: 4, left: 10.0),
+                                                width: 40,
+                                                height: 40,
+                                                child: Image.asset(cooler),
+                                              ),
+                                              onTap: () => {
+                                                Fluttertoast.showToast(
+                                                    msg:
+                                                        "این قابلیت در این نسخه در دسترس نمیباشد")
+                                              },
+                                            ),
+                                          ],
                                         ),
-                                        Text(
-                                          "26",
-                                          style: TextStyle(
-                                              fontSize: 18.0,
-                                              fontFamily: "Byekan",
-                                              color: Colors.white),
-                                        )
-                                      ],
+                                      ),
                                     ),
                                   ],
-                                )
-                              ],
-                            ),
-                          ],
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 150.0,
+                                    height: 1.0,
+                                    color: Color(0xFF707070),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Text(
+                                            "٪  رطوبت  ",
+                                            style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontFamily: "Byekan",
+                                                color: Color(0xFFA5A5A5)),
+                                          ),
+                                          SizedBox(
+                                            height: 20.0,
+                                          ),
+                                          Text(
+                                            "14",
+                                            style: TextStyle(
+                                                fontSize: 24.0,
+                                                fontFamily: "Byekan",
+                                                color: Colors.white),
+                                          )
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 10.0, right: 10.0),
+                                        child: Container(
+                                          width: 1,
+                                          height: 50,
+                                          color: Color(0xFF6B6B6B),
+                                        ),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Text(
+                                            "°C  دما  ",
+                                            style: TextStyle(
+                                                fontFamily: "Byekan",
+                                                fontSize: 20.0,
+                                                color: Color(0xFFA5A5A5)),
+                                          ),
+                                          SizedBox(
+                                            height: 20.0,
+                                          ),
+                                          Text(
+                                            "26",
+                                            style: TextStyle(
+                                                fontSize: 24.0,
+                                                fontFamily: "Byekan",
+                                                color: Colors.white),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20.0, right: 20.0),
-                      width: 170.0,
-                      height: 220.0,
-                      color: Color.fromARGB(0, 255, 255, 255),
-                    )
-                  ],
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, right: 20.0),
+                        width: 170.0,
+                        height: 220.0,
+                        color: Color.fromARGB(0, 255, 255, 255),
+                      )
+                    ],
+                  ),
                 ),
               ),
             
@@ -360,7 +379,7 @@ class _HomeScreenState extends State<HomeScreen> {
             
               Container(
                 alignment: Alignment.center,
-                width: 250.0,
+                width: widthScreen * 0.3,
                 child: Wrap(
                   spacing: 18.0,
                   runSpacing: 18.0,
@@ -372,7 +391,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       child: Container(
-                        width: 110.0,
+                        width: 140.0,
                         height: 140.0,
                         decoration: BoxDecoration(
                             color: Color(0xFF303030),
@@ -410,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.only(left: 5.0),
-                width: 125.0,
+                width: widthScreen *0.15,
                 child: Wrap(
                   spacing: 18.0,
                   runSpacing: 18.0,
@@ -431,7 +450,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             })
                           }),
                       child: Container(
-                        width: 110.0,
+                        width: 140.0,
                         height: 140.0,
                         decoration: BoxDecoration(
                             color: Color(0xFF303030),
@@ -463,18 +482,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   }),
                 ),
               ),
+              
+              
               Container(
                 alignment: Alignment.center,
                 width: 125.0,
-                child: Wrap(
-                  spacing: 20.0,
-                  runSpacing: 20.0,
+                height: heightScreen * 0.75,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
                       onTap: onJoin,
                       child: Container(
-                        width: 110.0,
-                        height: 140.0,
+                        width: 140.0,
+                        height: heightScreen *.36,
                         decoration: BoxDecoration(
                             color: Color(0xFF303030),
                             borderRadius: BorderRadius.circular(10.0)),
@@ -506,8 +527,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             )
                           }),
                       child: Container(
-                        width: 110.0,
-                        height: 140.0,
+                        width: 140.0,
+                       height: heightScreen *.36,
                         decoration: BoxDecoration(
                             color: Color(0xFF303030),
                             borderRadius: BorderRadius.circular(10.0)),
@@ -531,6 +552,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                  
+                  
                   ],
                 ),
               ),

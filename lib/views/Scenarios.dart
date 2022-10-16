@@ -170,7 +170,7 @@ class _ScenariosScreenState extends State<ScenariosScreen> {
                                     })
                                   }),
                               child: Container(
-                                width: 110.0,
+                                width: 140.0,
                                 height: 100.0,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),

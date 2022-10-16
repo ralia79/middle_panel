@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: unused_element
 class _lockScreen extends GetxController {
   double leftMargin = 0;
   var margins = [0.0, 200.0, 100.0, 230.0];
