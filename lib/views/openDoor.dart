@@ -110,8 +110,8 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                               checkActive(1);
                             },
                             child: Container(
-                              width: 110,
-                              height: 100,
+                              width: 150,
+                              height: 150,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   width: 1,
@@ -148,8 +148,8 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                               checkActive(2);
                             },
                             child: Container(
-                              width: 110,
-                              height: 100,
+                              width: 150,
+                              height: 150,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   width: 1,
@@ -186,8 +186,8 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                               checkActive(3);
                             },
                             child: Container(
-                              width: 110,
-                              height: 100,
+                              width: 150,
+                              height: 150,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   width: 1,
@@ -224,8 +224,8 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                               checkActive(4);
                             },
                             child: Container(
-                              width: 110,
-                              height: 100,
+                              width: 150,
+                              height: 150,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   width: 1,
@@ -264,8 +264,8 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                               });
                             },
                             child: Container(
-                              width: 110,
-                              height: 100,
+                              width: 150,
+                              height: 150,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   width: 1,
@@ -306,8 +306,8 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                               );
                             }),
                             child: Container(
-                              width: 110,
-                              height: 100,
+                              width: 150,
+                              height: 150,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   width: 1,
@@ -379,7 +379,7 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                                     });
                                   },
                                   child: Container(
-                                    width: 110,
+                                    width: 150,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10.0),
@@ -397,7 +397,7 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
                                 ),
                               ),
                               Container(
-                                width: 110,
+                                width: 150,
                                 height: 40,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
