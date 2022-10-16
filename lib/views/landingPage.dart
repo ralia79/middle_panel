@@ -48,10 +48,9 @@ class _LandigScreenState extends State<LandigScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 20.0),
                     width: widthScreen - 80,
                     child: ListScreen(),
-                    alignment: Alignment.centerRight,
+                    alignment: Alignment.center,
                   ),
                 ],
               )
