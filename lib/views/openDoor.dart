@@ -60,26 +60,26 @@ class _OpenDoorScreenState extends State<OpenDoorScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Timer(
-      Duration(seconds: 1),
-      (() => setState(
-            () {
-              Counter++;
-            },
-          )),
-    );
-    Timer(Duration(seconds: 1), () {
-      if (Counter == 60) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LockScreen(
-              lock: 0,
-            ),
-          ),
-        );
-      }
-    });
+    // Timer(
+    //   Duration(seconds: 1),
+    //   (() => setState(
+    //         () {
+    //           Counter++;
+    //         },
+    //       )),
+    // );
+    // Timer(Duration(seconds: 1), () {
+    //   if (Counter == 60) {
+    //     Navigator.push(
+    //       context,
+    //       MaterialPageRoute(
+    //         builder: (context) => LockScreen(
+    //           lock: 0,
+    //         ),
+    //       ),
+    //     );
+    //   }
+    // });
 
     return Scaffold(
       body: GestureDetector(

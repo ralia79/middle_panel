@@ -52,26 +52,26 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void TimerHandler() {
-    timer = Timer(Duration(seconds: 1), () {
-      setState(
-        () {
-          Counter++;
-        },
-      );
-    });
+    // timer = Timer(Duration(seconds: 1), () {
+    //   setState(
+    //     () {
+    //       Counter++;
+    //     },
+    //   );
+    // });
 
-    Timer(Duration(seconds: 1), () {
-      if (Counter == 200) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LockScreen(
-              lock: 0,
-            ),
-          ),
-        );
-      }
-    });
+    // Timer(Duration(seconds: 1), () {
+    //   if (Counter == 200) {
+    //     Navigator.push(
+    //       context,
+    //       MaterialPageRoute(
+    //         builder: (context) => LockScreen(
+    //           lock: 0,
+    //         ),
+    //       ),
+    //     );
+    //   }
+    // });
   }
 
   @override

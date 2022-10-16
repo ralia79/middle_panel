@@ -31,25 +31,25 @@ class _TempScreenState extends State<TempScreen> {
     var radiator = "assets/images/radiator_active.png";
     var cooler = "assets/images/cooler_deactive.png";
     bool isOff = false;
-    Timer(
-      Duration(seconds: 1),
-      (() => setState(
-            () {
-              Counter++;
-            },
-          )),
-    );
-    Timer(Duration(seconds: 1), () {
-      if (Counter == 400) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => LockScreen(
-                    lock: 0,
-                  )),
-        );
-      }
-    });
+    // Timer(
+    //   Duration(seconds: 1),
+    //   (() => setState(
+    //         () {
+    //           Counter++;
+    //         },
+    //       )),
+    // );
+    // Timer(Duration(seconds: 1), () {
+    //   if (Counter == 400) {
+    //     Navigator.push(
+    //       context,
+    //       MaterialPageRoute(
+    //           builder: (context) => LockScreen(
+    //                 lock: 0,
+    //               )),
+    //     );
+    //   }
+    // });
     return Scaffold(
       body: GestureDetector(
         onTap: () {

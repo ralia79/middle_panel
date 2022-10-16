@@ -52,25 +52,25 @@ class _OutPutsScreenState extends State<OutPutsScreen> {
   Widget build(BuildContext context) {
     var widthScreen = MediaQuery.of(context).size.width;
     var heightScreen = MediaQuery.of(context).size.height;
-    Timer(
-      Duration(seconds: 1),
-      (() => setState(
-            () {
-              Counter++;
-            },
-          )),
-    );
-    Timer(Duration(seconds: 1), () {
-      if (Counter == 60) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => LockScreen(
-                    lock: 0,
-                  )),
-        );
-      }
-    });
+    // Timer(
+    //   Duration(seconds: 1),
+    //   (() => setState(
+    //         () {
+    //           Counter++;
+    //         },
+    //       )),
+    // );
+    // Timer(Duration(seconds: 1), () {
+    //   if (Counter == 60) {
+    //     Navigator.push(
+    //       context,
+    //       MaterialPageRoute(
+    //           builder: (context) => LockScreen(
+    //                 lock: 0,
+    //               )),
+    //     );
+    //   }
+    // });
     return Scaffold(
       body: GestureDetector(
         onTap: () {
