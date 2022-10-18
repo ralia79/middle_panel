@@ -255,6 +255,7 @@ class _LockScreenState extends State<LockScreen> {
                                       )
                                     : SizedBox(),
                                 Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Column(
@@ -265,8 +266,8 @@ class _LockScreenState extends State<LockScreen> {
                                           alignment: Alignment.topLeft,
                                           child: Lottie.asset(
                                               "assets/images/weather_cloudynight.json",
-                                              width: 200.0,
-                                              height: 200.0),
+                                              width: 300.0,
+                                              height: 300.0),
                                         ),
                                         Row(
                                           children: [
@@ -274,14 +275,14 @@ class _LockScreenState extends State<LockScreen> {
                                               "22 ",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 25.0,
+                                                  fontSize: 35.0,
                                                   fontFamily: "Byekan"),
                                             ),
                                             Text(
                                               "°C",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15.0,
+                                                  fontSize: 20.0,
                                                   fontFamily: "Byekan"),
                                             )
                                           ],
@@ -293,7 +294,7 @@ class _LockScreenState extends State<LockScreen> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.symmetric(vertical: 20.0),
+                                          padding: const EdgeInsets.symmetric(vertical: 50.0),
                                           child: Container(
                                             child: DigitalClock(
                                               is24HourTimeFormat: true,
@@ -306,11 +307,11 @@ class _LockScreenState extends State<LockScreen> {
                                                   BoxDecoration(
                                                       color: Colors.transparent),
                                               hourMinuteDigitTextStyle: TextStyle(
-                                                  fontSize: 40.0,
+                                                  fontSize: 55.0,
                                                   color: Colors.white,
                                                   fontFamily: "Byekan"),
                                               secondDigitTextStyle: TextStyle(
-                                                  fontSize: 20.0,
+                                                  fontSize: 30.0,
                                                   color: Colors.white,
                                                   fontFamily: "Byekan"),
                                             ),
@@ -324,7 +325,7 @@ class _LockScreenState extends State<LockScreen> {
                                                 year,
                                                 style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 20.0,
+                                                  fontSize: 35.0,
                                                   fontFamily: "Byekan",
                                                 ),
                                               ),
@@ -332,7 +333,7 @@ class _LockScreenState extends State<LockScreen> {
                                                 month,
                                                 style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 20.0,
+                                                  fontSize: 35.0,
                                                   fontFamily: "Byekan",
                                                 ),
                                               ),
@@ -340,7 +341,7 @@ class _LockScreenState extends State<LockScreen> {
                                                 day,
                                                 style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 20.0,
+                                                  fontSize: 35.0,
                                                   fontFamily: "Byekan",
                                                 ),
                                               ),
